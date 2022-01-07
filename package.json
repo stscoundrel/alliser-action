@@ -1,29 +1,29 @@
 {
-  "name": "typescript-template",
+  "name": "alliser-action",
   "version": "1.0.0",
-  "description": "Template repo for generic TypeScript /  Node.js library with tests & lint",
-  "repository": "https://github.com/stscoundrel/typescript-template.git",
+  "description": "Run Alliser using Github Actions",
+  "repository": "https://github.com/stscoundrel/alliser-action.git",
   "author": "stscoundrel <silvennoinen.sampo@gmail.com>",
   "license": "MIT",
-  "private": false,
+  "private": true,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "engines": {
-    "node": ">=12.0.0"
+    "node": ">=16.0.0"
   },
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.16.7",
     "@babel/preset-env": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
-    "@stryker-mutator/core": "^5.4.1",
-    "@stryker-mutator/jest-runner": "^5.4.1",
     "@types/jest": "^27.4.0",
+    "@types/node": "^17.0.8",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
+    "@vercel/ncc": "^0.33.1",
     "babel-jest": "^27.4.6",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^15.0.0",
@@ -38,10 +38,7 @@
     "lint": "eslint .",
     "fix": "eslint . --fix",
     "jest": "jest --verbose --runInBand --passWithNoTests",
-    "test:unit": "yarn jest",
-    "test:mutation": "stryker run",
-    "test:coverage": "jest --coverage --coverageThreshold='{\"global\":{\"statements\":\"90\", \"functions\":\"90\", \"branches\":\"90\", \"lines\":\"90\"}}'",
-    "build": "tsc",
+    "build": "ncc build src/index.ts",
     "prepublishOnly": "yarn build && yarn test:unit"
   }
 }

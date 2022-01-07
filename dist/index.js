@@ -1694,6 +1694,7 @@ try {
     alliser_1.default.validate(extensions, folders);
 }
 catch (error) {
+    console.log(error.message);
     core_1.default.setFailed(error.message);
 }
 

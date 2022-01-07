@@ -14,7 +14,10 @@
   "engines": {
     "node": ">=16.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "alliser": "^0.5.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.16.7",
     "@babel/preset-env": "^7.16.7",

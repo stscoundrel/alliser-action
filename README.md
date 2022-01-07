@@ -1,13 +1,9 @@
-# TypeScript Template
+# Alliser Action
 
-Template repo for generic TypeScript / Node.js library with tests &amp; lint
+Run [Alliser](https://github.com/stscoundrel/alliser) using Github Actions.
 
-### Install
+## Why Alliser?
 
-`yarn add name-of-the-package`
+Alliser guards your project against incorrect file types. It an be something small -> maybe you want to enforce all files are .ts instead of .js. Or maybe you want to ban or discourage use of particular file extension, or a programming language.
 
-##### Usage
-
-```javascript
-// Your usage example here
-```
+Just setup Alliser Action, hook it up to pull requests and you'll know if some file extension is incorrect.

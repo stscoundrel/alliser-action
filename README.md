@@ -1,4 +1,4 @@
-# Alliser Action
+# Alliser Action (WORK IN PROGRESS)
 
 Run [Alliser](https://github.com/stscoundrel/alliser) using Github Actions.
 

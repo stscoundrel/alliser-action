@@ -17,17 +17,17 @@ Example .yml action file for running Alliser.
 - Fails if other file types are found, and outputs list of the files.
 
 ```
-name: Alliser - Check file types
+name: Alliser
 
 on: [pull_request]
 
 jobs:
   alliser:
     runs-on: ubuntu-latest
-    name: Run Alliser
+    name: Check file types
     steps:
     - uses: actions/checkout@v2
-    - uses: stscoundrel/alliser-action@v0.5.2
+    - uses: stscoundrel/alliser-action@v0.6.1
       name: Alliser action step
       with:
         extensions: .ts,.tsx

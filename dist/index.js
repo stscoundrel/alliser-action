@@ -1305,14 +1305,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.listFilesinFolders = exports.listFiles = void 0;
 const fs_1 = __importDefault(__nccwpck_require__(147));
+const ignores_1 = __nccwpck_require__(437);
 const isDirectory = (path) => fs_1.default.statSync(path).isDirectory();
-const listFiles = (folderPath) => {
+const listFiles = (folderPath, ignores) => {
     const allFiles = [];
     const files = fs_1.default.readdirSync(folderPath);
-    files.forEach((file) => {
+    files
+        .filter((file) => (0, ignores_1.doesNotContainIgnores)(file, ignores))
+        .forEach((file) => {
         const fullPath = `${folderPath}/${file}`;
         if (isDirectory(fullPath)) {
-            allFiles.push(...(0, exports.listFiles)(fullPath));
+            allFiles.push(...(0, exports.listFiles)(fullPath, ignores));
         }
         else {
             allFiles.push(fullPath);
@@ -1321,9 +1324,11 @@ const listFiles = (folderPath) => {
     return allFiles;
 };
 exports.listFiles = listFiles;
-const listFilesinFolders = (folders) => {
+const listFilesinFolders = (folders, ignores = (0, ignores_1.getDefaultIgnores)()) => {
     const files = [];
-    folders.forEach((folder) => files.push(...(0, exports.listFiles)(folder)));
+    folders
+        .forEach((folder) => files
+        .push(...(0, exports.listFiles)(folder, ignores)));
     return files;
 };
 exports.listFilesinFolders = listFilesinFolders;
@@ -1341,14 +1346,29 @@ exports["default"] = {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.getDefaultIgnores = void 0;
+exports.doesNotContainIgnores = exports.getDefaultIgnores = void 0;
 const DEFAULT_IGNORES = [
     '.git',
     '.github',
-    'node_modules',
 ];
-const getDefaultIgnores = () => DEFAULT_IGNORES;
+const VENDOR_IGNORES = [
+    'node_modules',
+    'bower_components',
+    'vendor',
+];
+const IGNORES = [...DEFAULT_IGNORES, ...VENDOR_IGNORES];
+const getDefaultIgnores = () => IGNORES;
 exports.getDefaultIgnores = getDefaultIgnores;
+const doesNotContainIgnores = (path, ignores = (0, exports.getDefaultIgnores)()) => {
+    let isAllowed = true;
+    ignores.forEach((ignore) => {
+        if (path.includes(ignore)) {
+            isAllowed = false;
+        }
+    });
+    return isAllowed;
+};
+exports.doesNotContainIgnores = doesNotContainIgnores;
 exports["default"] = {
     getDefaultIgnores: exports.getDefaultIgnores,
 };
@@ -1371,7 +1391,7 @@ const extensions_1 = __nccwpck_require__(169);
 const ignores_1 = __nccwpck_require__(437);
 const check = (extensions, folders) => {
     const ignores = (0, ignores_1.getDefaultIgnores)();
-    const files = finder_1.default.listFilesinFolders(folders);
+    const files = finder_1.default.listFilesinFolders(folders, ignores);
     return (0, extensions_1.filterByExtensions)(files, extensions, ignores);
 };
 exports.check = check;

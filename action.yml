@@ -1,5 +1,7 @@
 name: 'Alliser Action'
 description: 'Run Alliser file checker'
+icon: 'check-square'
+color: 'black'
 inputs:
   extensions: 
     description: 'Comma seperated list of extensions to allow. No spaces. Eg. .ts,.tsx'

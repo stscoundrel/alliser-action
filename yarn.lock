@@ -1169,10 +1169,10 @@ ajv@^6.10.0, ajv@^6.12.4:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-alliser@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/alliser/-/alliser-0.6.1.tgz#f5c730c6ba79cac75e625998c88a92727e28bf16"
-  integrity sha512-0MoOexn76vVyFUF3yJR88BLXFkXLKfqCsM8wEqBe8y77foVGPvZcX7rg73AuILJMsGesEM17ExSLgnW7UMcpfw==
+alliser@^0.6.2:
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/alliser/-/alliser-0.6.2.tgz#74d272bc8ab34d8f957dc6b80667a7c134fb73d2"
+  integrity sha512-cDn0aCHO0uLx/RTGiMHDRt8po1+dsc+ccJITMx0MTCqX839fTmRd+CVZVsEkzAzIx8MSS3EGvrTQfd+y59Vg1g==
 
 ansi-regex@^5.0.1:
   version "5.0.1"

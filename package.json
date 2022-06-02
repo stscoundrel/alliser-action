@@ -15,7 +15,7 @@
     "node": ">=16.0.0"
   },
   "dependencies": {
-    "@actions/core": "^1.7.0",
+    "@actions/core": "^1.8.2",
     "alliser": "^0.6.2"
   },
   "devDependencies": {

@@ -1243,10 +1243,10 @@ ajv@^6.10.0, ajv@^6.12.4:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-alliser@^0.6.3:
-  version "0.6.3"
-  resolved "https://registry.yarnpkg.com/alliser/-/alliser-0.6.3.tgz#8ab46bc9e36d85f68a6cc7e17368152061305bc2"
-  integrity sha512-9JhIsCqJgw7pbLPSoFO3a7RDL2pKPrzYLmac56CsI6SZ+bq3yeWOH0mwS3kqY9dfC9EwN57xie7eipygoSVwUA==
+alliser@^0.6.4:
+  version "0.6.4"
+  resolved "https://registry.yarnpkg.com/alliser/-/alliser-0.6.4.tgz#d21fb1d169d6d4e49ff8939dd8eb3ca57545e96d"
+  integrity sha512-yBMj5JiIX+xaSNFbXggEowYjkqzPLTRQE47Aho667wZD4t7q9zSBFAfUG+hVWwHSVHT5VLDQCfi/g14gN+ClBQ==
 
 ansi-regex@^5.0.1:
   version "5.0.1"

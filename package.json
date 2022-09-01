@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@actions/core": "^1.9.0",
-    "alliser": "^0.6.3"
+    "alliser": "^0.6.4"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
